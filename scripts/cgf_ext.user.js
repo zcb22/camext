@@ -118,7 +118,7 @@
                     btn.className = 'nr-btn nr-btn-sm';
                     btn.textContent = 'NR';
                     btn.target = '_blank';
-                    btn.rel = 'noopener';
+                    btn.rel = 'noopener noreferrer';
                     btn.href = targetUrl;
                     container.appendChild(btn);
                 } else if (existingBtn.href !== targetUrl) {
