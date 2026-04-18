@@ -30,7 +30,7 @@ This bundle consists of 6 scripts designed with a "Native-Feel" approach. They u
 4. Tampermonkey will automatically detect the script and ask to install it.
 
 ### Option 2: The Bundle (Master Script)
-If you want to manage all scripts as one unit, install script "master_camext.user.js".
+If you want to manage all scripts as one unit, install script [master_camext.user.js](https://github.com/zcb22/CamExt/raw/refs/heads/main/master_camext.user.js).
 
 ## 🤝 Developer Notes
 
