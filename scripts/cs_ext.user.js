@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Camsoda: Extra Links
 // @namespace    zcb_dev
-// @version      1.1
+// @version      1.2
 // @description  Adds quick links to NRTool and CGF on Camsoda model profile pages for easier navigation
 // @author       zcb22
 // @match        https://*.camsoda.com/*
@@ -52,11 +52,11 @@
 			let html = '';
 			for (const label in TOOLS) {
 				html += `
-					<div class="index-module__headerBottomBox--EtHub cs-ext-item">
-						<a href="${TOOLS[label](modelName)}" target="_blank" rel="noopener noreferrer" style="color: #fff">
+					<a href="${TOOLS[label](modelName)}" target="_blank" rel="noopener noreferrer" style="color: #fff">
+                        <div class="index-module__headerBottomBox--EtHub cs-ext-item">
 							${label}
-						</a>
-					</div>`;
+						</div>
+					</a>`;
 			}
 			nav.insertAdjacentHTML('afterbegin', html);
 		}

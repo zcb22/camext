@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Cam4: Extra Links
 // @namespace    zcb_dev
-// @version      1.1
+// @version      1.2
 // @description  Adds quick links to NRTool and CGF on Cam4 model profile pages for easier navigation
 // @author       zcb22
 // @match        https://*.cam4.com/*
@@ -46,11 +46,11 @@
 			let html = '';
 			for (const label in TOOLS) {
 				html += `
-					<div class="c4-ext-item yAILi rbqYB">
-						<a href="${TOOLS[label](modelName)}" target="_blank" rel="noopener noreferrer" style="color: #fff; text-decoration: none" >
+					<a href="${TOOLS[label](modelName)}" target="_blank" rel="noopener noreferrer" style="color: #fff; text-decoration: none" >
+                        <div class="c4-ext-item yAILi rbqYB">
 							${label}
-						</a>
-					</div>`;
+						</div>
+					</a>`;
 			}
 			nav.insertAdjacentHTML('beforeend', html);
 		}
