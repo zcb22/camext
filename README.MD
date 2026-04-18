@@ -1,4 +1,4 @@
-# Cam Tools Bundle v1.1
+# Cam Tools Bundle
 
 A collection of lightweight user scripts for major cam platforms. These tools integrate deep links to analytical services (**NRTool**, **CamGirlFinder**, and **RECU**) directly into the site's native interface.
 
