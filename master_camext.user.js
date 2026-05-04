@@ -6,10 +6,12 @@
 // @author       zcb22
 // @icon         https://img.icons8.com/fluency/100/webcam.png
 //
+// @match        https://*.bonga*.com/*
 // @match        https://*.cam4.com/*
 // @match        https://*.chaturbate.com/*
 // @match        https://*.camgirlfinder.net/*
 // @match        https://*.camsoda.com/*
+// @match        https://*.flirt4free.com/*
 // @match        https://*.stripchat.com/*
 // @match        https://*.nrtool.to/nrtool/history/*
 //
