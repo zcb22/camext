@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name         My Cam Tools: Bundle Pack
 // @namespace    zcb_dev
-// @version      1.2.1
+// @version      1.2.2
 // @description  Installs and runs all extension scripts at once
 // @author       zcb22
 // @icon         https://img.icons8.com/fluency/100/webcam.png
 //
-// @match        https://*.bonga*.com/*
+// @match        https://*.bongacams.com/*
 // @match        https://*.cam4.com/*
 // @match        https://*.chaturbate.com/*
 // @match        https://*.camgirlfinder.net/*
