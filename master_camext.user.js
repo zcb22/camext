@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         My Cam Tools: Bundle Pack
 // @namespace    zcb_dev
-// @version      1.2
+// @version      1.2.1
 // @description  Installs and runs all extension scripts at once
 // @author       zcb22
 // @icon         https://img.icons8.com/fluency/100/webcam.png
