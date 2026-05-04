@@ -1,26 +1,25 @@
 // ==UserScript==
-// @name         Chaturbate: Extra Links
+// @name         Flirt4Free: Extra Links
 // @namespace    zcb_dev
-// @version      1.2
-// @description  Adds quick links to NRTool, CGF and RECU on Chaturbate model profile pages for easier navigation
+// @version      1.0
+// @description  Adds quick links to NRTool and CGF on Flirt4Free model profile pages for easier navigation
 // @author       zcb22
-// @match        https://*.chaturbate.com/*
+// @match        https://*.flirt4free.com/*
 // @grant        none
 // @run-at       document-idle
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=chaturbate.com
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=flirt4free.com
 // ==/UserScript==
 
 (function () {
     'use strict';
 
     // Domain guard for master-script compatibility
-    if (!location.hostname.includes('chaturbate.com')) return;
+    if (!location.hostname.includes('flirt4free.com')) return;
 
     // Link generators
     const TOOLS = {
-        'NRTOOL': (n) => `https://nrtool.to/nrtool/history/cb/${n}`,
-        'CGF':    (n) => `https://camgirlfinder.net/models/cb/${n}#1`,
-        'RECU':   (n) => `https://recu.me/performer/${n}`
+        'NRTool': (n) => `https://nrtool.to/nrtool/history/f4f/${n}`,
+        'CGF':    (n) => `https://camgirlfinder.net/models/f4f/${n}#1`
     };
 
     let activeModel = '';
@@ -29,15 +28,16 @@
      * Main UI Synchronization logic
      */
     const syncUI = () => {
-        const nav = document.querySelector('#desktop-spa-header > div > nav:nth-child(3)');
-        const player = document.querySelector('.playerTitleBar');
+        const nav = document.querySelector('.live-cams-categories-header-wrap > ul');
+        const player = document.querySelector('.hls-video-player');
 
         if (!nav) return;
 
         // Extract model name only if we are on a profile page with an active player
-        const pathParts = window.location.pathname.split('/').filter(Boolean);
-        const modelName = (player && player.style.visibility !== 'hidden')
-        ? pathParts[0]
+        const urlString = window.location.href;
+        const url = new URL(urlString);
+        let modelName = (player)
+        ? url.searchParams.get('model')
         : '';
 
         // Prevent unnecessary DOM updates
@@ -45,18 +45,16 @@
         activeModel = modelName;
 
         // Cleanup previous injected links
-        nav.querySelectorAll('.cb-ext-item').forEach(el => el.remove());
+        nav.querySelectorAll('.f4f-ext-item').forEach(el => el.remove());
 
         // Inject links
         if (modelName && nav) {
             let html = '';
             for (const label in TOOLS) {
                 html += `
-                    <a href="${TOOLS[label](modelName)}" class="HeaderNavBar__link cb-ext-item" target="_blank" rel="noopener noreferrer">
-                            <div class="type--smpx type--medium textColor HeaderNavBar__link-text">
-                                ${label}
-                            </div>
-                    </a>`;
+					<li class="f4f-ext-item">
+						<a href="${TOOLS[label](modelName)}" target="_blank" rel="noopener noreferrer">${label}</a>
+					</li>`;
             }
             nav.insertAdjacentHTML('beforeend', html);
         }
@@ -69,7 +67,7 @@
         const hasChanges = mutations.some(m => m.addedNodes.length || m.removedNodes.length);
         if (hasChanges) {
             clearTimeout(timer);
-            timer = setTimeout(syncUI, 200);
+            timer = setTimeout(syncUI, 150);
         }
     });
     // Observing

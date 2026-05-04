@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Camsoda: Extra Links
 // @namespace    zcb_dev
-// @version      1.2
+// @version      1.2.1
 // @description  Adds quick links to NRTool and CGF on Camsoda model profile pages for easier navigation
 // @author       zcb22
 // @match        https://*.camsoda.com/*
